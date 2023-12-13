@@ -44,8 +44,8 @@ RUN : \
   && :
 
 RUN : \
-  && curl -LSso /entrypoint.sh https://raw.githubusercontent.com/apache/flink-docker/master/1.17/scala_2.12-java11-ubuntu/docker-entrypoint.sh \
-  && chmod +x /entrypoint.sh \
+  && curl -LSso /docker-entrypoint.sh https://raw.githubusercontent.com/apache/flink-docker/master/1.17/scala_2.12-java11-ubuntu/docker-entrypoint.sh \
+  && chmod +x /docker-entrypoint.sh \
   && :
 
 RUN : \
@@ -54,6 +54,6 @@ RUN : \
   && :
 
 USER flink
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 6123 8081
 CMD ["help"]
